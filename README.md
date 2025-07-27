@@ -31,35 +31,27 @@ This application provides a comprehensive solution for personal and collaborativ
 - **Efficient Navigation**: Pagination for large note collections
 - **Interactive Feedback**: SweetAlert2 notifications for user actions
 ### interfaces
-- **login
+- **login**
  <img width="1236" height="621" alt="image" src="https://github.com/user-attachments/assets/ffb9da51-11c9-42e8-a548-e7c17d70ee4f" />
- - **register
+- **register**
  <img width="1249" height="597" alt="image" src="https://github.com/user-attachments/assets/dd7a9657-2600-447f-b5bf-ea57f1e28aab" />
-  - **notesdashboard
+- **notesdashboard**
  <img width="1220" height="630" alt="image" src="https://github.com/user-attachments/assets/274b944b-0554-4285-b816-9e561e421198" />
  <img width="1281" height="643" alt="image" src="https://github.com/user-attachments/assets/66cf71e7-d359-4adc-adf9-3bccee31d69e" />
  <img width="1141" height="620" alt="image" src="https://github.com/user-attachments/assets/f6172a84-cfd6-4dac-b06f-449b580dccc4" />
  <img width="1153" height="626" alt="image" src="https://github.com/user-attachments/assets/e7b3f7cf-e2fb-406c-bc91-348dd808b30c" />
- - **create note
-<img width="1068" height="647" alt="image" src="https://github.com/user-attachments/assets/7ab78789-84c8-492a-9128-6db8e903e9ce" />
-- **edit note
-<img width="951" height="641" alt="image" src="https://github.com/user-attachments/assets/5ac2a27f-170a-4d1a-ad1c-e4b6300cd08b" />
-- **share note
+- **create note**
+ <img width="1068" height="647" alt="image" src="https://github.com/user-attachments/assets/7ab78789-84c8-492a-9128-6db8e903e9ce" />
+- **edit note**
+ <img width="951" height="641" alt="image" src="https://github.com/user-attachments/assets/5ac2a27f-170a-4d1a-ad1c-e4b6300cd08b" />
+- **share note**
 <img width="1060" height="633" alt="image" src="https://github.com/user-attachments/assets/16486211-6c68-4990-a9c9-9a901c6edb27" />
-- **view note
+- **view note**
 <img width="1235" height="549" alt="image" src="https://github.com/user-attachments/assets/2d3a19da-e0e4-480e-a2e8-12be5b2c1341" />
-- **notifications
+- **notifications**
 <img width="889" height="600" alt="image" src="https://github.com/user-attachments/assets/57c368af-90a7-4c6b-b3a4-713d0ad71beb" />
-- **mobile Experience
+- **mobile Experience**
 <img width="208" height="451" alt="image" src="https://github.com/user-attachments/assets/47bb4655-7bee-4aa1-9182-c9849049aef2" />
-
-
-
-
-
-
-
-
 ## 🛠 Technology Stack
 
 ### Backend
