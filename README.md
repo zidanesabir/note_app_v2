@@ -239,7 +239,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🐛 Issues & Support
 
 If you encounter any issues or have questions:
-1. Check existing [GitHub Issues](https://github.com/zidanesabir/note_app/issues)
+1. Check existing [GitHub Issues](https://github.com/zidanesabir/note_app_v2/issues)
 2. Create a new issue with detailed description
 3. Include steps to reproduce any bugs
 
