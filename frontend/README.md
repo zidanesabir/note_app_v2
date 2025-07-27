@@ -136,7 +136,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Documentation: Project Wiki
 Issues: GitHub Issues
 Discussions: GitHub Discussions
-Email: support@yourproject.com
+Email: sabirzidane0@gmail.com
 
 🙏 Acknowledgments
 
