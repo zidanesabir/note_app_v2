@@ -31,15 +31,15 @@ This application provides a comprehensive solution for personal and collaborativ
 - **Efficient Navigation**: Pagination for large note collections
 - **Interactive Feedback**: SweetAlert2 notifications for user actions
   
-###User Interfaces
+### User Interfaces
 
-Login
+ - Login
  <img width="1236" height="621" alt="image" src="https://github.com/user-attachments/assets/ffb9da51-11c9-42e8-a548-e7c17d70ee4f" />
 
-Register
+ - Register
  <img width="1249" height="597" alt="image" src="https://github.com/user-attachments/assets/dd7a9657-2600-447f-b5bf-ea57f1e28aab" />
 
-Notes Dashboard
+ - Notes Dashboard
  <img width="1220" height="630" alt="image" src="https://github.com/user-attachments/assets/274b944b-0554-4285-b816-9e561e421198" />
 
 
