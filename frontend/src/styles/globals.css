@@ -1,0 +1,39 @@
+/* Import Google Fonts - Poppins for headings, Inter for body */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply global font and background/text colors from Tailwind config */
+body {
+  font-family: 'Inter', sans-serif; /* Default body font */
+  @apply bg-neutral-50 text-neutral-800 antialiased;
+}
+
+/* Base styles for headings, using Poppins for emphasis */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  @apply font-bold text-neutral-900;
+}
+
+/* Base styles for links */
+a {
+  @apply text-primary hover:text-primary-dark transition-colors duration-200;
+}
+
+/* Custom prose styles for markdown content in ReactMarkdown */
+.prose {
+  h1 { @apply text-3xl font-heading font-bold mb-4; }
+  h2 { @apply text-2xl font-heading font-bold mb-3; }
+  h3 { @apply text-xl font-heading font-bold mb-2; }
+  p { @apply mb-3 leading-relaxed text-neutral-700; }
+  ul, ol { @apply list-disc list-inside mb-3 text-neutral-700; }
+  a { @apply text-primary hover:underline; }
+  code { @apply bg-neutral-100 text-accent-dark px-1 py-0.5 rounded text-sm; }
+  pre code { @apply block bg-neutral-800 text-white p-4 rounded-lg overflow-x-auto my-4; }
+  blockquote { @apply border-l-4 border-primary pl-4 italic text-neutral-600 my-4; }
+  table { @apply w-full border-collapse my-4; }
+  th, td { @apply border border-neutral-200 p-3 text-left; }
+  th { @apply bg-neutral-100 font-semibold text-neutral-800; }
+}

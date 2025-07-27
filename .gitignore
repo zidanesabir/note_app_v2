@@ -1,0 +1,42 @@
+# Python
+*.pyc
+__pycache__/
+.env
+.venv/
+venv/
+env/
+instance/
+.pytest_cache/
+
+# Node.js
+node_modules/
+.next/
+out/
+dist/ # Vite's build output directory
+npm-debug.log*
+yarn-debug.log*
+.env.local
+.DS_Store
+
+# Database
+*.sqlite3
+*.db
+*.db-journal
+# Explicitly ignore the application's SQLite database file (if using SQLite for backend)
+# sql_app.db # This line is for FastAPI's default SQLite, removed for Node.js SQLite
+# For Node.js SQLite, the database file will be inside the 'data' directory which is often mounted.
+data/notes_db.sqlite # Ignore the actual SQLite file for Node.js backend
+
+# Docker
+.dockerignore
+# Do not ignore docker-compose.yml if it's in the root
+!docker-compose.yml
+# Example of other local .env files that might be used by Docker
+.env.development.local
+
+# IDEs and other tools
+.vscode/
+.idea/
+*.swp
+*.bak
+*.swo

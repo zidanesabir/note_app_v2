@@ -1,0 +1,76 @@
+services:
+  # MongoDB Database Service
+  # This service provides the MongoDB database instance.
+  db:
+    image: mongo:latest # Use the latest official MongoDB image
+    container_name: notes_mongodb_db # A human-readable name for the MongoDB container.
+    ports:
+      - "27017:27017" # Maps host port 27017 to container port 27017.
+    volumes:
+      - mongodb_data:/data/db # Persistent volume for MongoDB data.
+    restart: unless-stopped # Keep the database running unless manually stopped.
+    networks:
+      - default # Explicitly place on the default bridge network.
+
+  # Node.js Express.js Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: development  # Use the development stage
+    container_name: notes_backend_app
+    ports:
+      - "8000:8000"
+    volumes:
+      # Bind mount: Mounts the host's backend code into the container for live reloading.
+      - ./backend:/app/backend
+      # Exclude node_modules to prevent conflicts
+      - /app/backend/node_modules
+    environment:
+      - DATABASE_URI=mongodb://db:27017/notes_db
+      - JWT_SECRET=xq3wl6T1vGzB3ZDZx9M9LePQdGXLQpuaPoOjGjTUMmo
+      - JWT_EXPIRES_IN=1h
+      - PORT=8000
+      - NODE_ENV=development
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - default
+
+  # React.js Vite Frontend Service
+  frontend:
+    build:
+      context: ./frontend # Path to the frontend application's Dockerfile.
+      dockerfile: Dockerfile # Name of the Dockerfile within the frontend directory.
+      args: # Build arguments passed to the Dockerfile during the build process.
+        # VITE_API_BASE_URL points to the backend service's internal network address.
+        # 'backend' is the service name defined in this docker-compose.yml.
+        # It's IMPORTANT that '/api' is NOT included here, as apiClient adds it.
+        VITE_API_BASE_URL: http://backend:8000 # <--- CORRECT: No '/api' here
+    container_name: notes_frontend_app # A human-readable name for the container instance.
+    ports:
+      - "3000:3000" # Maps host port 3000 to container port 3000.
+    volumes:
+      # Bind mount: Mounts the host's frontend code into the container for live reloading.
+      - ./frontend:/app/frontend
+      # Anonymous volume: Prevents the host's node_modules from overwriting the container's.
+      - /app/frontend/node_modules
+      # Anonymous volume: For Vite's development build cache.
+      - /app/frontend/.vite
+    environment: # Environment variables passed into the frontend container.
+      - NODE_ENV=development # Explicitly set NODE_ENV for the Vite dev server.
+    # Override the default CMD instruction from the Dockerfile for development.
+    # Runs 'npm run dev' to start the Vite development server with hot-reloading.
+    # This relies on 'vite' being available via 'npm run dev' script in package.json.
+    command: npm run dev # <--- THIS IS THE CORRECT COMMAND FOR FRONTEND DEVELOPMENT
+    depends_on:
+      - backend # Frontend depends on backend being up.
+    restart: unless-stopped # Restart policy.
+    networks:
+      - default # Explicitly place on the default bridge network.
+
+# Define named volumes managed by Docker.
+# Named volumes are persistent storage locations managed by Docker.
+volumes:
+  mongodb_data: # Volume for MongoDB persistent data.

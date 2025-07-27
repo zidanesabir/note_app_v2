@@ -1,0 +1,5 @@
+# Node.js specific ignores
+node_modules/           # Ignore the directory where npm/yarn installs packages
+npm-debug.log* # Ignore npm debug logs
+yarn-debug.log* # Ignore yarn debug logs (if using Yarn)
+.env                    # Ignore your local environment variables file
