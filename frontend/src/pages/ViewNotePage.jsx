@@ -55,7 +55,7 @@ const ViewNotePage = () => {
 
   const handleCopyLink = () => {
     const publicUrlBase = window.location.origin;
-    navigator.clipboard.writeText(`${publicUrlBase}/public/${note.id}`);
+    navigator.clipboard.writeText(`${publicUrlBase}/notes/${note.id}`);
     Swal.fire({
       icon: 'success',
       title: 'Link Copied!',
